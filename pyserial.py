@@ -14,9 +14,11 @@ val = input("Select Port: COM")
 for x in range(0, len(portList)):
     if portList[x].startswith("COM" + str(val)):
         portVar = "COM" + str(val)
-        print(portList[x] + " Conected")
-    else:
-        print("Error")
+        print('\nSelected Port:')
+        print(portList[x])
+        print(f'Colecting data from {portVar}...\n')
+#   else:
+#       print('Acess Denied')
 
 """
  -> A sugestion is find a way to better make sure if the user choose 
