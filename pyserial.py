@@ -11,4 +11,18 @@ for onePort in ports:
 
 val = input("Select Port: COM")
 
-print(f'COM{var}')
+for x in range(0, len(portList)):
+    if portList[x].startswith("COM" + str(val)):
+        portVar = "COM" + str(val)
+        print(portList[x] + " Selecionada")
+    else:
+        print("Invalid COM")
+
+serialInst.baudrate = 115200
+serialInst.port = portVar
+serialInst.open()
+
+while True:
+    if serialInst.in_waiting:
+        packet = serialInst.readline()
+        print(packet.decode('utf').rstrip('\n'))
