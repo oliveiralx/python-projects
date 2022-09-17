@@ -11,19 +11,22 @@ for onePort in ports:
 
 val = input("Select Port: COM")
 
-for x in range(0, len(portList)):
-    if portList[x].startswith("COM" + str(val)):
-        portVar = "COM" + str(val)
-        print('\nSelected Port:')
-        print(portList[x])
-        print(f'Colecting data from {portVar}...\n')
-#   else:
-#       print('Acess Denied')
+if portList[x].startswith("COM" + str(val)):
+    portVar = "COM" + str(val)
+    print('\nSelected Port:')
+    print(portList[x])
+    print(f'Colecting data from {portVar}...\n')
+else:
+    print('Access Denied')
 
 """
  -> A sugestion is find a way to better make sure if the user choose 
     a wrong COM the program will return and ask again for the user 
     about the right COM. The changes can be in the lines 14-19.
+
+ -> Maybe that'll be possible to solve the problem using a while condition.
+    If while the user don't choose a available COM, the program
+    will return to the begin and ask again for the user.
 """
 
 serialInst.baudrate = 115200
