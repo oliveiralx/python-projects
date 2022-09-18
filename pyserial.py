@@ -28,6 +28,7 @@ for x in range(0, len(portList)):
  -> Maybe that'll be possible to solve the problem using a while condition.
     If while the user don't choose a available COM, the program
     will return to the begin and ask again for the user.
+    
 """
 
 serialInst.baudrate = 115200
