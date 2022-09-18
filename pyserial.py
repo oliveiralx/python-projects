@@ -11,13 +11,14 @@ for onePort in ports:
 
 val = input("Select Port: COM")
 
-if portList[x].startswith("COM" + str(val)):
-    portVar = "COM" + str(val)
-    print('\nSelected Port:')
-    print(portList[x])
-    print(f'Colecting data from {portVar}...\n')
-else:
-    print('Access Denied')
+for x in range(0, len(portList)):
+    if portList[x].startswith("COM" + str(val)):
+        portVar = "COM" + str(val)
+        print('\nSelected Port:')
+        print(portList[x])
+        print(f'Colecting data from {portVar}...\n')
+    else:
+        print('Access Denied')
 
 """
  -> A sugestion is find a way to better make sure if the user choose 
