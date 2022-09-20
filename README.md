@@ -11,5 +11,6 @@ Pull requests for the project are welcome. Maybe you can open an issue to discus
 ```
 git clone https://github.com/oliveiralx/python-projects.git
 ```
+
 ## License
 <img alt="GitHub" src="https://img.shields.io/github/license/oliveiralx/python-projects?color=blue&label=License&style=flat-square">
