@@ -1,5 +1,5 @@
 import serial.tools.list_ports
-import time import time
+from time import time
 
 ports = serial.tools.list_ports.comports()
 serialInst = serial.Serial()
@@ -20,7 +20,7 @@ for x in range(0, len(portList)):
         print(f'Colecting data from {portVar}...\n')
     else:
         print('Access Denied')
-        
+
 serialInst.baudrate = 115200
 serialInst.port = portVar
 serialInst.open()
@@ -29,8 +29,12 @@ t_wait = 10
 
 RPM = []
 
+# 1135133 = 201 dados coletados, faça uma regra de 3 para saber quual o numero que deve ser colocado em stop
+stop = 1135133; start = 0
+
 while True:
     if serialInst.in_waiting:
         packet = serialInst.readline()
         print(packet.decode('utf').rstrip('\n'))
         RPM.append(packet)
+    start += 1
