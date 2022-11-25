@@ -1,3 +1,4 @@
+Ângulo[Graus],Velocidade[RPM]
 169,14.54
 160,76.64
 156,72.41
